@@ -62,7 +62,7 @@ export async function formatRangeEdits(
     const cursor = mirroredDoc.getTokenCursor(startIndex);
     if (!cursor.withinString()) {
         const rangeTuple: number[] = [startIndex, endIndex];
-        const newText: string = await _formatRange(
+        const newText: string | undefined = await _formatRange(
             text,
             document.getText(),
             rangeTuple,
